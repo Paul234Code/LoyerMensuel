@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Loyer.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+.s3 { color: #808080;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Loyer.py</font>
+</center></td></tr></table>
+<pre><span class="s0">TotalLoyer_mensuel = input(</span><span class="s1">&quot;Donner le montant Total du loyer:&quot;</span><span class="s0">)</span>
+<span class="s0">Loyer_mensuel = int(TotalLoyer_mensuel)</span>
+<span class="s0">print(</span><span class="s1">&quot;Total du Loyer Mensuel :&quot;</span><span class="s2">, </span><span class="s0">Loyer_mensuel)</span>
+
+
+<span class="s3"># Calcul du loyer individuel par /mois</span>
+<span class="s2">def </span><span class="s0">calculLoyer():</span>
+    <span class="s2">return </span><span class="s0">Loyer_mensuel / </span><span class="s4">3</span>
+
+
+<span class="s0">Internet_mensuel = float(input(</span><span class="s1">&quot; Donner le montant de la facture internet svp:&quot;</span><span class="s0">))</span>
+<span class="s0">print(</span><span class="s1">&quot;TotalInternet_mensuel= :&quot;</span><span class="s2">, </span><span class="s0">Internet_mensuel)</span>
+
+
+<span class="s3"># calcul du montant d'internet par personne</span>
+<span class="s2">def </span><span class="s0">calculInternet():</span>
+    <span class="s2">return </span><span class="s0">Internet_mensuel / </span><span class="s4">3</span>
+
+
+<span class="s0">Divers_Paul = float(input(</span><span class="s1">&quot;Donner le montant Divers payer par Paul:&quot;</span><span class="s0">))</span>
+<span class="s0">Divers_Sidy = float(input(</span><span class="s1">&quot;Donner le montant Divers payer par Sidy:&quot;</span><span class="s0">))</span>
+<span class="s0">Divers_Accrachi = float(input(</span><span class="s1">&quot;Donner le montant Divers payer par Accrachi:&quot;</span><span class="s0">))</span>
+<span class="s3"># affichage des montants de chaque divers</span>
+<span class="s0">print(</span><span class="s1">&quot;Divers_Paul: {:6.2f}&quot;</span><span class="s0">.format(Divers_Paul))</span>
+<span class="s0">print(</span><span class="s1">&quot;Divers_Sidy: {:6.2f}&quot;</span><span class="s0">.format(Divers_Sidy))</span>
+<span class="s0">print(</span><span class="s1">&quot;Divers_Accrachi: {:6.2f}&quot;</span><span class="s0">.format(Divers_Accrachi))</span>
+
+
+<span class="s3"># calcul du total des Divers</span>
+<span class="s2">def </span><span class="s0">calculPaulDivers():</span>
+    <span class="s2">return </span><span class="s0">(Divers_Paul / </span><span class="s4">3</span><span class="s0">) + (Divers_Sidy / </span><span class="s4">3</span><span class="s0">) + (Divers_Accrachi / </span><span class="s4">3</span><span class="s0">) - Divers_Paul</span>
+
+
+<span class="s2">def </span><span class="s0">calculSidyDivers():</span>
+    <span class="s2">return </span><span class="s0">(Divers_Paul / </span><span class="s4">3</span><span class="s0">) + (Divers_Sidy / </span><span class="s4">3</span><span class="s0">) + (Divers_Accrachi / </span><span class="s4">3</span><span class="s0">) - Divers_Sidy</span>
+
+
+<span class="s2">def </span><span class="s0">calculAccrachiDivers():</span>
+    <span class="s2">return </span><span class="s0">(Divers_Paul / </span><span class="s4">3</span><span class="s0">) + (Divers_Sidy / </span><span class="s4">3</span><span class="s0">) + (Divers_Accrachi / </span><span class="s4">3</span><span class="s0">) - Divers_Accrachi - Internet_mensuel</span>
+
+
+<span class="s3"># calcul du montant du dans les Divers par locataire</span>
+
+
+<span class="s0">print(</span><span class="s1">&quot;Partie Loyer Mensuel:&quot;</span><span class="s0">)</span>
+
+<span class="s3"># calcul internet par mois/par personne</span>
+<span class="s0">print()</span>
+<span class="s0">print(</span><span class="s1">&quot;Loyer_Paul: {:6.2f}&quot;</span><span class="s0">.format(calculLoyer()))</span>
+<span class="s0">print(</span><span class="s1">&quot;Loyer_Sidy: {:6.2f}&quot;</span><span class="s0">.format(calculLoyer()))</span>
+<span class="s0">print(</span><span class="s1">&quot;Loyer_Accrachi: {:6.2f}&quot;</span><span class="s0">.format(calculLoyer()))</span>
+<span class="s3"># calcul de la facture internet</span>
+<span class="s0">print(</span><span class="s1">&quot;Internet Mensuel :</span><span class="s2">\n</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+<span class="s0">print(</span><span class="s1">&quot;Internet_Paul:      {:6.2f}&quot;</span><span class="s0">.format(calculInternet()))</span>
+<span class="s0">print(</span><span class="s1">&quot;Internet_Sidy:      {:6.2f}&quot;</span><span class="s0">.format(calculInternet()))</span>
+<span class="s0">print(</span><span class="s1">&quot;Internet_Accrachi:    {:6.2f}&quot;</span><span class="s0">.format(calculInternet()))</span>
+
+<span class="s0">print(</span><span class="s1">&quot;Partie des Divers :</span><span class="s2">\n</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+<span class="s0">print(</span><span class="s1">&quot;Divers_Paul:      {:6.2f}&quot;</span><span class="s0">.format(calculPaulDivers()))</span>
+<span class="s0">print(</span><span class="s1">&quot;Divers_Sidy:      {:6.2f}&quot;</span><span class="s0">.format(calculSidyDivers()))</span>
+<span class="s0">print(</span><span class="s1">&quot;Divers_Accrachi:      {:6.2f}&quot;</span><span class="s0">.format(calculAccrachiDivers()))</span>
+<span class="s3"># total pour chaque personne</span>
+<span class="s0">Total_Paul = calculLoyer() + calculInternet() + calculPaulDivers()</span>
+<span class="s0">Total_Sidy = calculLoyer() + calculInternet() + calculSidyDivers()</span>
+<span class="s0">Total_Accrachi = calculLoyer() + calculInternet() + calculAccrachiDivers()</span>
+<span class="s0">print(</span><span class="s1">&quot;Total pour chaque personne:</span><span class="s2">\n</span><span class="s1">&quot;</span><span class="s0">)</span>
+<span class="s0">print(</span><span class="s1">&quot;Total de Paul:  {:6.2f}$&quot;</span><span class="s0">.format(Total_Paul))</span>
+<span class="s0">print(</span><span class="s1">&quot;Total de Sidy:  {:6.2f}$&quot;</span><span class="s0">.format(Total_Sidy))</span>
+<span class="s0">print(</span><span class="s1">&quot;Total d'Accrachi : {:6.2f}$&quot;</span><span class="s0">.format(Total_Accrachi))</span>
+</pre>
+</body>
+</html>
