@@ -29,15 +29,15 @@ print("Divers_Accrachi: {:6.2f}".format(Divers_Accrachi))
 
 # calcul du total des Divers
 def calculPaulDivers():
-    return (Divers_Paul / 3) + (Divers_Sidy / 3) + (Divers_Accrachi / 3) - Divers_Paul
+    return (Divers_Paul / 3) + (Divers_Sidy / 3) + (Divers_Accrachi / 3)
 
 
 def calculSidyDivers():
-    return (Divers_Paul / 3) + (Divers_Sidy / 3) + (Divers_Accrachi / 3) - Divers_Sidy
+    return (Divers_Paul / 3) + (Divers_Sidy / 3) + (Divers_Accrachi / 3)
 
 
 def calculAccrachiDivers():
-    return (Divers_Paul / 3) + (Divers_Sidy / 3) + (Divers_Accrachi / 3) - Divers_Accrachi - Internet_mensuel
+    return (Divers_Paul + Divers_Sidy + Divers_Accrachi) / 3
 
 
 # calcul du montant du dans les Divers par locataire
@@ -63,11 +63,11 @@ print("Divers_Paul:      {:6.2f}".format(calculPaulDivers()))
 print("Divers_Sidy:      {:6.2f}".format(calculSidyDivers()))
 print("Divers_Accrachi:      {:6.2f}".format(calculAccrachiDivers()))
 # total pour chaque personne
-Total_Paul = calculLoyer() + calculInternet() + calculPaulDivers()
-Total_Sidy = calculLoyer() + calculInternet() + calculSidyDivers()
-Total_Accrachi = calculLoyer() + calculInternet() + calculAccrachiDivers()
+Total_Paul = calculLoyer() + calculInternet() + calculPaulDivers() - Divers_Paul
+Total_Sidy = calculLoyer() + calculInternet() + calculSidyDivers() - Divers_Sidy
+Total_Accrachi = calculLoyer() + calculInternet() + calculAccrachiDivers() - Divers_Accrachi - Internet_mensuel
 print("Total pour chaque personne:\n")
 print("Total de Paul:  {:6.2f}$".format(Total_Paul))
 print("Total de Sidy:  {:6.2f}$".format(Total_Sidy))
 print("Total d'Accrachi : {:6.2f}$".format(Total_Accrachi))
-print("Total des frais mensuel: {:6.2f}$".format(Total_Sidy+Total_Paul+Total_Accrachi))
+print("Total des frais mensuel: {:6.2f}$".format(Total_Sidy + Total_Paul + Total_Accrachi))
