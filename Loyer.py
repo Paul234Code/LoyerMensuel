@@ -1,21 +1,21 @@
 #!/usr/bin/bash
-TotalLoyer_mensuel = input("Donner le montant Total du loyer:")
-Loyer_mensuel = int(TotalLoyer_mensuel)
-print("Total du Loyer Mensuel :", Loyer_mensuel)
+TotalLoyerMensuel = input("Donner le montant Total du loyer:")
+LoyerMensuel = int(TotalLoyerMensuel)
+print("Total du Loyer Mensuel :", LoyerMensuel)
 
 
 # Calcul du loyer individuel par /mois
 def calculLoyer():
-    return Loyer_mensuel / 3
+    return LoyerMensuel / 3
 
 
-Internet_mensuel = float(input(" Donner le montant de la facture internet svp:"))
-print("TotalInternet_mensuel= :", Internet_mensuel)
+InternetMensuel = float(input(" Donner le montant de la facture internet svp:"))
+print("TotalInternet_mensuel = :", InternetMensuel)
 
 
 # calcul du montant d'internet par personne
 def calculInternet():
-    return Internet_mensuel / 3
+    return InternetMensuel / 3
 
 
 Divers_Paul = float(input("Donner le montant Divers payer par Paul:"))
@@ -65,7 +65,7 @@ print("Divers_Accrachi:      {:6.2f}".format(calculAccrachiDivers()))
 # total pour chaque personne
 Total_Paul = calculLoyer() + calculInternet() + calculPaulDivers() - Divers_Paul
 Total_Sidy = calculLoyer() + calculInternet() + calculSidyDivers() - Divers_Sidy
-Total_Accrachi = calculLoyer() + calculInternet() + calculAccrachiDivers() - Divers_Accrachi - Internet_mensuel
+Total_Accrachi = calculLoyer() + calculInternet() + calculAccrachiDivers() - Divers_Accrachi - InternetMensuel
 print("Total pour chaque personne:\n")
 print("Total de Paul:  {:6.2f}$".format(Total_Paul))
 print("Total de Sidy:  {:6.2f}$".format(Total_Sidy))
